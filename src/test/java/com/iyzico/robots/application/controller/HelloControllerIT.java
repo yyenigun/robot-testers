@@ -1,5 +1,6 @@
-package com.iyzico.robots;
+package com.iyzico.robots.application.controller;
 
+import com.iyzico.robots.IntegrationTest;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ public class HelloControllerIT extends IntegrationTest {
     }
 
     @Test
-    public void getHello() throws Exception {
+    public void should_retrieve_greetings_from_spring_boot() throws Exception {
         ResponseEntity<String> response = template.getForEntity(base.toString(),
                 String.class);
         assertThat(response.getBody(), equalTo("Greetings from Spring Boot!"));
